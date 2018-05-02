@@ -20,7 +20,7 @@ int main(int argc, char const *argv[])
 	}
 	if((pfw = fopen(argv[2], "w")) == NULL)
 	{
-		printf("error open %s", argv[2]);
+		fprintf(stderr, "error open %s", argv[2]);
 		exit(EXIT_FAILURE);
 	}
 
