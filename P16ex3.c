@@ -23,5 +23,19 @@ int main(int argc, char const *argv[])
 		printf("error open %s", argv[2]);
 		exit(EXIT_FAILURE);
 	}
+
+	while((ch = getc(pfr)) != EOF)
+	{
+		if(ch > 90)
+			ch -= 32;
+		putc(ch, pfw);
+	}
+
+	if((fclose(pfr)) != 0)
+		fprintf(stderr, "error close %s\n", argv[1]);
+
+	if((fclose(pfw)) != 0)
+		fprintf(stderr, "error close %s\n", argv[2]);
+
 	return 0;
 }
