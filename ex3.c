@@ -9,7 +9,7 @@ int main(int argc, char const *argv[])
 
 	if(argc != 3)
 	{
-		fprintf(stderr, "%s file_for_reading_name file_for_writing_name \n", argv[0]);
+		fprintf(stderr, "enter the: %s file_for_reading_name file_for_writing_name \n", argv[0]); // example_1.txt
 		exit(EXIT_FAILURE);
 	}
 
