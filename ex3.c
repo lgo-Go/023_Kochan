@@ -18,6 +18,7 @@ int main(int argc, char const *argv[])
 		fprintf(stderr, "error open %s", argv[1]);
 		exit(EXIT_FAILURE);
 	}
+
 	if((pfw = fopen(argv[2], "w")) == NULL)
 	{
 		fprintf(stderr, "error open %s", argv[2]);

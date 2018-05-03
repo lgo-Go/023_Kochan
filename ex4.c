@@ -5,6 +5,8 @@
 int main(int argc, char const *argv[])
 {
 	FILE *pf_1, *pf_2;
+	int const n = 50;
+	char words[n];
 
 	if(argc != 3)
 	{
@@ -17,13 +19,18 @@ int main(int argc, char const *argv[])
 		fprintf(stderr, "error open %s", argv[1]);
 		exit(EXIT_FAILURE);
 	}
+
 	if((pf_2 = fopen(argv[2], "r")) == NULL)
 	{
 		fprintf(stderr, "error open %s", argv[2]);
 		exit(EXIT_FAILURE);
 	}
 
-	/*Code*/
+	while(fgets(words, n, pf_1) != NULL && words[0] != '\n' )
+		fputs(words, stdout);
+
+	while(fgets(words, n, pf_2) != NULL && words[0] != '\n' )
+		fputs(words, stdout);
 
 	if((fclose(pf_1)) != 0)
 			fprintf(stderr, "error close %s\n", argv[1]);
