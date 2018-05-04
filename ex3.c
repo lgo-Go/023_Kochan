@@ -15,13 +15,13 @@ int main(int argc, char const *argv[])
 
 	if((pfr = fopen(argv[1], "r")) == NULL)
 	{
-		fprintf(stderr, "error open %s", argv[1]);
+		fprintf(stderr, "open error %s", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 
 	if((pfw = fopen(argv[2], "w")) == NULL)
 	{
-		fprintf(stderr, "error open %s", argv[2]);
+		fprintf(stderr, "open error %s", argv[2]);
 		exit(EXIT_FAILURE);
 	}
 
@@ -33,10 +33,10 @@ int main(int argc, char const *argv[])
 	}
 
 	if((fclose(pfr)) != 0)
-		fprintf(stderr, "error close %s\n", argv[1]);
+		fprintf(stderr, "close error %s\n", argv[1]);
 
 	if((fclose(pfw)) != 0)
-		fprintf(stderr, "error close %s\n", argv[2]);
+		fprintf(stderr, "close error %s\n", argv[2]);
 
 	return 0;
 }

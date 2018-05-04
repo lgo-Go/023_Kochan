@@ -1,4 +1,4 @@
-/*Выводит по 20 строк из файла*/
+/*Выводит по 20 строк из файла*/                                    //Начиная со второго вывода выдаёт по 40 строк, а не по 20
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -10,13 +10,13 @@ int main(int argc, char const *argv[])
 
 	if(argc != 2)
 	{
-		fprintf(stderr, "enter the: %s file_for_reading_name\n", argv[0]);
+		fprintf(stderr, "enter the: %s file_for_reading_name\n", argv[0]); // example_big.txt
 		exit(EXIT_FAILURE);
 	}
 
 	if((pf = fopen(argv[1], "r")) == NULL)
 	{
-		fprintf(stderr, "error open %s", argv[1]);
+		fprintf(stderr, "open error %s", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 
@@ -36,11 +36,11 @@ int main(int argc, char const *argv[])
 		i = 0;
 		printf("enter the symbol: ");
 		scanf("%c", &enter);
-		// printf("\n");
+		printf("\n");
 	}
 
 	if((fclose(pf)) != 0)
-		fprintf(stderr, "error close %s\n", argv[1]);
+		fprintf(stderr, "close error %s\n", argv[1]);
 
 	return 0;
 }
