@@ -27,18 +27,21 @@ int main(int argc, char const *argv[])
 
 	while(1)
 	{
-			ch = getc(pf);
-			if(i >= m && i <= n)
-				putc(ch, stdout);
-			if(ch == '\n')
-			{
-				putc(ch, stdout);
-				i = 0;
-			}
-			if(ch == EOF)
-				exit(EXIT_SUCCESS);
-			++i;
+		ch = getc(pf);
+		if(i >= m && i <= n)
+			putc(ch, stdout);
+		if(ch == '\n')
+		{
+			putc(ch, stdout);
+			i = 0;
+		}
+		if(ch == EOF)
+			exit(EXIT_SUCCESS);
+		++i;
 	}
+
+	if((fclose(pf)) != 0)
+		fprintf(stderr, "close error %s\n", argv[1]);
 
 	return 0;
 }
