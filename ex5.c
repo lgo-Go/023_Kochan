@@ -6,11 +6,12 @@ int main(int argc, char const *argv[])
 {
 	int ch;
 	int m, n;
+	int i = 1;
 	FILE *pf;
 
 	if(argc != 2)
 	{
-		fprintf(stderr, "enter the: %s file_for_reading_name\n", argv[0]); // example_1.txt
+		fprintf(stderr, "enter the: %s file_for_reading_name\n", argv[0]); // example_(1/2/big).txt
 		exit(EXIT_FAILURE);
 	}
 
@@ -26,14 +27,17 @@ int main(int argc, char const *argv[])
 
 	while(1)
 	{
-		for (int i = 1; i <= n; ++i)
-		{
 			ch = getc(pf);
-			if(i >= m)
+			if(i >= m && i <= n)
 				putc(ch, stdout);
+			if(ch == '\n')
+			{
+				putc(ch, stdout);
+				i = 0;
+			}
 			if(ch == EOF)
 				exit(EXIT_SUCCESS);
-		}
+			++i;
 	}
 
 	return 0;
